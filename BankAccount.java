@@ -25,6 +25,8 @@ public class BankAccount {
       double account = bobAccount.calculateSimpleInterest();
 
         System.out.println("Bob's Simple Interest after 5 years: "+ account);
+        System.out.println("Bob's Simple Interest after 5 years: "+ account);
+        
     }
 }
 
