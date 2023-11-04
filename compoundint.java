@@ -1,35 +1,35 @@
-class compound{
+class Cloan {
     double principal;
-     double annualRate;
-      int years;
-      int month;
-     
-      void getvalue(double p, double Rate, int time, int mon) 
-      {
-        principal = p;
-        annualRate = Rate;
-        years = time;
-        month = mon;
+    double rate;
+    int time;
 
-      }
+    public Cloan(double principal, double rate, int time) {
+        this.principal = principal;
+        this.rate = rate;
+        this.time = time;
+    }
 
-     double calculateSimpleInterest(){
-        double cInterest = principal*(Math.pow((1+annualRate/years),(years*annualRate)));
-       return cInterest;
+    public double calculatetotalamount() {
+        double compoundinterest = principal * (Math.pow(1 + (rate / 100), time) - 1);
+        double totalamount = principal + compoundinterest;
+        return totalamount;
     }
 }
 
 public class compoundint {
     public static void main(String[] args) {
-       
+        double principal = 500000; 
+        double rate = 18;
+        int time = 3; 
 
-        compound myCompound = new compound();
-       myCompound.getvalue(500000, 0.18,3,12 );
-      double Cint = myCompound.calculateSimpleInterest();
+        Cloan bobLoan = new Cloan(principal, rate/12, time*12);
 
-        System.out.println("Bob's compound Interest after 3 years: "+ Cint);
+        double amountpaid = bobLoan.calculatetotalamount();
+
+        System.out.println("Total amount paid by Mr Bob is: " + amountpaid + " Rwf");
     }
 }
+
 
 
 
